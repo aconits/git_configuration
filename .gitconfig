@@ -12,6 +12,7 @@
 	si = submodule init
 	su = submodule update
 	delete-branch = "!f() { cur_br=$(git rev-parse --abbrev-ref HEAD); if [ \"$cur_br\" = \"$2\" ]; then git checkout master; fi; git push $1 --delete $2; git branch -D $2; }; f"
+	log1 = log -n 20 --oneline --graph --pretty='format:%C(auto)%as %h %an %d %s'
 [user]
 	name = x
 	email = x@x.x
